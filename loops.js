@@ -46,6 +46,48 @@ let fruits = ["apple", "banana", "orange"];
 //     }
 // }
 
+//어나니머스
+let foreach = function (mixin, index){
+    let condition = !((typeof(mixin) == 'boolean')||(typeof(mixin) == 'string')||(typeof(mixin) == 'number'));
+    
+    if (condition) {
+        for(let animal of mixin)
+        {
+            console.log("mixin : "+ animal);
+        }
+    }else{
+        console.log("mixin : "+ mixin);
+    }
+}
 
+mixins.forEach(foreach);//forEach가 내부적으로 mixin,index를 알아서 넣어줌. 콜백함수 사용.
+
+//노멀
+mixins.forEach(function(mixin, index){
+    let condition = !((typeof(mixin) == 'boolean')||(typeof(mixin) == 'string')||(typeof(mixin) == 'number'));
+    
+    if (condition) {
+        for(let animal of mixin)
+        {
+            console.log("mixin : "+ animal);
+        }
+    }else{
+        console.log("mixin : "+ mixin);
+    }
+});
+
+//애로우
+mixins.forEach((mixin, index) => {
+    let condition = !((typeof(mixin) == 'boolean')||(typeof(mixin) == 'string')||(typeof(mixin) == 'number'));
+    
+    if (condition) {
+        for(let animal of mixin)
+        {
+            console.log("mixin : "+ animal);
+        }
+    }else{
+        console.log("mixin : "+ mixin);
+    }
+});
 
 console.log("program end !");
