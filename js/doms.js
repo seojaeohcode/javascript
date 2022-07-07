@@ -1,4 +1,3 @@
-
 let ulTag = document.querySelector("ul");
 let liTag = document.createElement('li');
 let liText = document.createTextNode('LG');
@@ -34,8 +33,29 @@ let remove = function remove(first="") {
 }
 
 let addEvent = document.querySelector("#add");
-addEvent.addEventListener('click', add)
+//addEvent.addEventListener('click', add)
+// addEvent.addEventListener('click', (first="")=>{
+    
+//     liTag = document.createElement('li');
+//     liText = document.createTextNode('LG');
 
+//     liTag.appendChild(liText);
+//     ulTag.appendChild(liTag);
+
+//     return true;
+// })
+addEvent.addEventListener('click', (event)=>{
+    console.log(event.path[1].children[6]);
+    
+    let ulTag = event.target;
+    let liTag = document.createElement('li');
+    let liText = document.createTextNode('LG');
+
+    liTag.appendChild(liText);
+    ulTag.appendChild(liTag);
+
+    return true;
+});
 let removeEvent = document.querySelector("#remove");
 removeEvent.addEventListener('click', remove)
 
